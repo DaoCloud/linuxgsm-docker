@@ -29,11 +29,11 @@
 
 例：`DaoCloud's World`
 
-### `SERVER_TOKEN` 创建在线服务器的 Token
+### `CLUSTER_TOKEN` 创建在线服务器的 Token
 
 例：`aHR0cHM6Ly9yZWFsaXR5MG5lLmNvbS8j`
 
-为了运行在线服务器需要一个 `server_token.txt` 文件，这个文件提供了 Don't Starve Together 的所有权，并允许 Klei 公司改善那些违反了条款的服务器。
+为了运行在线服务器需要一个 `cluster_token.txt` 文件，这个文件提供了 Don't Starve Together 的所有权，并允许 Klei 公司改善那些违反了条款的服务器。
 
 您需要通过以下方式生成 Token 文件：
 
@@ -86,7 +86,7 @@ dstserver:
   image: daocloud.io/daocloud/dstserver:latest 
   environment: 
     - DEFAULT_SERVER_NAME=DaoCloud's World
-    - SERVER_TOKEN=aHR0cHM6Ly9yZWFsaXR5MG5lLmNvbS8j
+    - CLUSTER_TOKEN=aHR0cHM6Ly9yZWFsaXR5MG5lLmNvbS8j
     - SERVER_PASSWORD=am9ic0BkYW9jbG91ZC5pbw==
     - DEFAULT_SERVER_DESCRIPTION=DaoCloud's World Run In Docker
     - GAME_MODE=survival
