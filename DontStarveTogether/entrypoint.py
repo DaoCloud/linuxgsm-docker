@@ -16,7 +16,8 @@ KLEI_DIRECTORY = os.path.join(HOME, '.klei')
 SETTING_DIRECTORY = os.path.join(KLEI_DIRECTORY, GAME)
 
 SETTING_FILE = os.path.join(SETTING_DIRECTORY, 'settings.ini')
-CLUSTER_TOKEN_FILE = os.path.join(SETTING_DIRECTORY, 'Cluster_1', 'cluster_token.txt')
+CLUSTER_TOKEN_FILE = os.path.join(
+    SETTING_DIRECTORY, 'Cluster_1', 'cluster_token.txt')
 MANAGER_FILE = os.path.join(HOME, 'dstserver')
 BIN_DIRECTORY = os.path.join(HOME, 'serverfiles', 'bin')
 BIN_FILE = os.path.join(
@@ -95,6 +96,7 @@ class DontStarveTogetherConfig(object):
 
         cluster_token = self.get_cluster_token()
         if cluster_token:
+            _ensure_directory(self.cluster_token_file)
             with open(self.cluster_token_file, 'wb') as token_file:
                 token_file.write(cluster_token)
             self.config.set('account', 'dedicated_lan_server', 'false')
@@ -103,6 +105,12 @@ class DontStarveTogetherConfig(object):
 
         with open(self.setting_file, 'wb') as config_file:
             self.config.write(config_file)
+
+
+def _ensure_directory(file_path):
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
 
 def _switch_to_user(user, group):
