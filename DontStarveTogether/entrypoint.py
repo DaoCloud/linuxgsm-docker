@@ -16,7 +16,7 @@ KLEI_DIRECTORY = os.path.join(HOME, '.klei')
 SETTING_DIRECTORY = os.path.join(KLEI_DIRECTORY, GAME)
 
 SETTING_FILE = os.path.join(SETTING_DIRECTORY, 'settings.ini')
-CLUSTER_TOKEN_FILE = os.path.join(SETTING_DIRECTORY, 'cluster_token.txt')
+CLUSTER_TOKEN_FILE = os.path.join(SETTING_DIRECTORY, 'Cluster_1', 'cluster_token.txt')
 MANAGER_FILE = os.path.join(HOME, 'dstserver')
 BIN_DIRECTORY = os.path.join(HOME, 'serverfiles', 'bin')
 BIN_FILE = os.path.join(
